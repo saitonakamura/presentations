@@ -1,0 +1,19 @@
+{
+  "name": "bending-reality-with-type-directed-emit",
+  "version": "1.0.0",
+  "author": "Michael Bashurov <accounts@saitonakamura.me>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@code-surfer/standalone": "^3.1.1",
+    "@code-surfer/themes": "^3.1.1",
+    "@saitonakamura/presa": "2.0.0-alpha",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-spring": "^8.0.27",
+    "styled-components": "^5.2.0",
+    "typescript": "^4.0.3"
+  }
+}

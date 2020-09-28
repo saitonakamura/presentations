@@ -1,0 +1,10 @@
+{
+  "name": "presentations",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/saitonakamura/presentations",
+  "author": "Michael Bashurov <accounts@saitonakamura.me>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": ["p/*"]
+}
