@@ -2,12 +2,12 @@ import { useSpring, AnimatedValue, ForwardedProps } from 'react-spring'
 import React, { useMemo } from 'react'
 
 import { ControlledFragment, Slide } from '@saitonakamura/presa'
-import { PlainLayout } from '@saitonakamura/presa/components/slide'
-import { SlideProps } from '@saitonakamura/presa/components/slide/slide-decl'
+import { PlainLayout } from '@saitonakamura/presa'
+import { SlideProps } from '@saitonakamura/presa'
 import {
   ALL_FRAGMENTS,
   NO_FRAGMENTS,
-} from '@saitonakamura/presa/components/fragment/constants'
+} from '@saitonakamura/presa'
 
 const processSteps = <T extends Record<string, {}>>(steps: Steps<T>) => {
   const keys = Object.keys(steps[0])

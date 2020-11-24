@@ -7,10 +7,13 @@
   "dependencies": {
     "@code-surfer/standalone": "^3.1.1",
     "@code-surfer/themes": "^3.1.1",
-    "@saitonakamura/presa": "2.0.0-beta",
+    "@saitonakamura/presa": "2.0.0-beta-3",
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
     "@types/styled-components": "^5.1.3",
+    "netlify-cli": "^2.68.8",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^2.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-spring": "^8.0.27",
@@ -19,8 +22,9 @@
     "use-spring": "^0.2.3"
   },
   "scripts": {
-    "bending:build": "parcel build bending/index.html --out-dir bending-dist",
-    "bending:deploy": "netlify deploy --dir=bending-dist --prod",
-    "bending:build:deploy": "yarn bending:build && yarn bending:deploy"
+    "start": "parcel index.html",
+    "build": "parcel build index.html --out-dir bending-dist",
+    "deploy:prod": "netlify deploy --dir=bending-dist --prod",
+    "build:deploy:prod": "yarn build && yarn deploy:prod"
   }
 }

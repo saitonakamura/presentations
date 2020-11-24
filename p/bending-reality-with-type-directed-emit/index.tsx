@@ -23,18 +23,19 @@ import VinDieselImg from './assets/vin-diesel.jpg'
 import JohnnySinsImg from './assets/johnny-sins.jpg'
 import { AnimatedSlide } from './useAnimatedSteps'
 import { animated } from 'react-spring'
-import { CenteredLayout } from '@saitonakamura/presa/components/slide'
+import { CenteredLayout } from '@saitonakamura/presa'
 import { JsonManualValidationSlide } from './jsonManualValidation'
 import { JsLibrariesSlide } from './JsLibrariesSlide'
 import { IoTsSlide } from './ioTsSlide'
 import { ClassValidatorCodeSlide } from './ClassValidatorCodeSlide'
-import { SlideProps } from '@saitonakamura/presa/components/slide/slide-decl'
+import { SlideProps } from '@saitonakamura/presa'
 import { CodeSurferSlide } from './CodeSurferSlide'
 import { vsDark } from '@code-surfer/themes'
 import { ReadingTypesSlides } from './ReadingTypesSlides'
 import { EmittingValidatorSlides } from './EmitingValidatorSlides'
 import { TypeDirectedEmitCodeSlides } from './TypeDirectedEmitCodeSlides'
 import { WrappingValidatorCodeSlides } from './WrappingValidatorCodeSlides'
+import { AstTalksSlide } from './AstTalksSlide'
 
 const red = '#C50101'
 const black = '#000000'
@@ -202,7 +203,7 @@ const TitleSlide = styled(
       <BackImgToBlend src={BackJokerImg} />
       {/*<GradientOfBackImgToBlend />*/}
 
-      <Absolute top="52%" left="35%" style={{ zIndex: 1 }}>
+      <Absolute top="52%" right="15%" style={{ zIndex: 1 }}>
         {subtitle && <SubtitleBack>{subtitle}</SubtitleBack>}
       </Absolute>
       <Typography fontSize="100px">
@@ -230,7 +231,7 @@ const AboutMeSlide = (
     <Typography fontSize="35px">
       <VerticalList>
         <Title>Michael Bashurov</Title>
-        <Fragment>🧑🏻‍💻 React, Typescript, ReScript</Fragment>
+        <Fragment>🧑🏻‍💻 React, Typescript,<br/> ReScript</Fragment>
         <Fragment>💼 Wisebits</Fragment>
       </VerticalList>
     </Typography>
@@ -486,7 +487,7 @@ const Deck = () => (
           left="0%"
           right="100%"
           bottom="100%"
-          style={{ width: '100%', height: '100%' }}
+          style={{ width: '100%', height: '100%', padding: '10px' }}
         >
           <iframe
             style={{ width: '100%', height: '100%' }}
@@ -494,6 +495,7 @@ const Deck = () => (
           />
         </Absolute>
       </BaseSlideStyled>
+      {AstTalksSlide}
       <CardSlide cardImg={RyuijiImg}>
         <Absolute top="38%" right="8%">
           <TitleBack fontSize="100px">Reading types</TitleBack>

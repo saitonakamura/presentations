@@ -4,11 +4,11 @@ import { CodeSurfer } from '@code-surfer/standalone'
 import {
   ALL_FRAGMENTS,
   NO_FRAGMENTS,
-} from '@saitonakamura/presa/components/fragment/constants'
-import { SlideProps } from '@saitonakamura/presa/components/slide/slide-decl'
+} from '@saitonakamura/presa'
+import { SlideProps } from '@saitonakamura/presa'
 import { useSpring } from 'use-spring'
-import { useFragments } from '@saitonakamura/presa/components/fragment'
-import { PlainLayout } from '@saitonakamura/presa/components/slide'
+import { useFragments } from '@saitonakamura/presa'
+import { PlainLayout } from '@saitonakamura/presa'
 // import { InputStep } from 'code-surfer-types'
 
 type Maybe<T> = T | null | undefined
