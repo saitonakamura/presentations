@@ -1721,10 +1721,10 @@
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
 
-"@saitonakamura/presa@2.0.0-beta-3":
-  version "2.0.0-beta-3"
-  resolved "https://registry.yarnpkg.com/@saitonakamura/presa/-/presa-2.0.0-beta-3.tgz#bf945505fa8c5a2fcbdc423b2dfcc5894d3e4115"
-  integrity sha512-1XdhewwIlLFZsXznE7ltSazx3OOz/EDu00d6Yu6tFSd+cpBCxQo4NoyhZ2V0F89x94B4zBS1vozB2AFhGe5DSg==
+"@saitonakamura/presa@2.0.0-beta-4":
+  version "2.0.0-beta-4"
+  resolved "https://registry.yarnpkg.com/@saitonakamura/presa/-/presa-2.0.0-beta-4.tgz#81111474211927faffb582d0dba4e01533bb62ae"
+  integrity sha512-qPwrm/YrAAlMlt8QN8V2cP6vzuHkAI2Oh5D9YAO3/Zog3GJrMTzidRe4o6SK3/b8rJvOfeg0hy6/8Ay149vBnA==
   dependencies:
     "@code-surfer/standalone" "^3.1.1"
     get-youtube-id "^1.0.0"

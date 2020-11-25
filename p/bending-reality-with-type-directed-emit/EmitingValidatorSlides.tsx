@@ -1,10 +1,11 @@
 import { CodeSurferSlide } from './CodeSurferSlide'
 import { vsDark } from '@code-surfer/themes'
 import React from 'react'
+import { IframeFullSlide } from './IframeFullSlide'
 
 export const EmittingValidatorSlides = [
   <CodeSurferSlide
-    key="emitting_validator_1"
+    key='emitting_validator_1'
     steps={[
       {
         code: `const createSuperStructValidatorForm = (
@@ -35,4 +36,5 @@ export const EmittingValidatorSlides = [
     ]}
     theme={vsDark}
   />,
+  <IframeFullSlide url='https://ts-ast-viewer.com/#code/JYWwDg9gTgLgBAKjgQwM51QVzAUyqmKTAY3gDMoIQ4ByLXfQkmGgKFeIgDsC4BzHDAAqaANZwAvHAAUASkkA+OGUHEAFtJoB6GGJqzWcOADoYanF2lRFcKMYBWqbnINHT5y4+42AbsgA2wAAmyDA4APoiqKLSXlyyrnCsZJhcpMDefoEhYZFisU7xcADehhjYeAREpMZoqHgw0vSVTDUQAEb2OKTSpUZGMMAw-jgAXOUMVczGVcBcfHIANGVGwePNjNUwxlyYIO14S2UAvgllUIKYUFxwcazHQA' />,
 ]

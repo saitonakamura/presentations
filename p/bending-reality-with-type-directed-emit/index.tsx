@@ -36,6 +36,8 @@ import { EmittingValidatorSlides } from './EmitingValidatorSlides'
 import { TypeDirectedEmitCodeSlides } from './TypeDirectedEmitCodeSlides'
 import { WrappingValidatorCodeSlides } from './WrappingValidatorCodeSlides'
 import { AstTalksSlide } from './AstTalksSlide'
+import { Absolute, BaseSlideStyled } from './lib'
+import { IframeFullSlide } from './IframeFullSlide'
 
 const red = '#C50101'
 const black = '#000000'
@@ -57,10 +59,6 @@ const Avatar = styled.img.attrs({
     border: 3px solid ${(p) => p.theme.colors.black};
   } */
 `
-
-const BaseSlideStyled = styled(Slide).attrs(({ layout }) => ({
-  layout: layout ?? 'centered',
-}))``
 
 const AboutMeSlideStyled = styled(BaseSlideStyled)``
 
@@ -129,46 +127,6 @@ const GradientOfBackImgToBlend = styled.div`
   );
 `
 
-const Absolute = styled.div<{
-  top?: string
-  left?: string
-  right?: string
-  bottom?: string
-  center?: boolean
-}>`
-  position: absolute;
-  ${(p) =>
-    p.top
-      ? css`
-          top: ${p.top};
-        `
-      : ''};
-  ${(p) =>
-    p.left
-      ? css`
-          left: ${p.left};
-        `
-      : ''};
-  ${(p) =>
-    p.right
-      ? css`
-          right: ${p.right};
-        `
-      : ''};
-  ${(p) =>
-    p.bottom
-      ? css`
-          bottom: ${p.bottom};
-        `
-      : ''};
-  ${(p) =>
-    p.center
-      ? css`
-          transform: translate(-50%, -50%);
-        `
-      : ''};
-`
-
 const TitleBack = styled(Title)`
   background-color: ${(p) => p.theme.colors.black};
   border: 10px solid ${(p) => p.theme.colors.white};
@@ -199,22 +157,22 @@ const TitleSlide = styled(
     children,
     ...rest
   }: { title?: string; subtitle?: React.ReactNode } & SlideProps) => (
-    <BaseSlideStyled background="none" {...rest}>
+    <BaseSlideStyled background='none' {...rest}>
       <BackImgToBlend src={BackJokerImg} />
       {/*<GradientOfBackImgToBlend />*/}
 
-      <Absolute top="52%" right="15%" style={{ zIndex: 1 }}>
+      <Absolute top='52%' right='15%' style={{ zIndex: 1 }}>
         {subtitle && <SubtitleBack>{subtitle}</SubtitleBack>}
       </Absolute>
-      <Typography fontSize="100px">
+      <Typography fontSize='100px'>
         {/*<Absolute top="25%" left="23%">*/}
         {/*  <Title noSize style={{ mixBlendMode: 'overlay', zIndex: -1 }}>*/}
         {/*    {title}*/}
         {/*  </Title>*/}
         {/*</Absolute>*/}
-        <Absolute top="25%" left="13%" style={{ zIndex: 1 }}>
+        <Absolute top='25%' left='13%' style={{ zIndex: 1 }}>
           {title && (
-            <TitleBack fontSize="inherit" style={{ whiteSpace: 'nowrap' }}>
+            <TitleBack fontSize='inherit' style={{ whiteSpace: 'nowrap' }}>
               {title}
             </TitleBack>
           )}
@@ -222,16 +180,19 @@ const TitleSlide = styled(
       </Typography>
       {children}
     </BaseSlideStyled>
-  )
+  ),
 )``
 
 const AboutMeSlide = (
   <AboutMeSlideStyled layout={CenteredLayoutHorizontal}>
     <Avatar style={{ marginRight: '30px' }} />
-    <Typography fontSize="35px">
+    <Typography fontSize='35px'>
       <VerticalList>
         <Title>Michael Bashurov</Title>
-        <Fragment>🧑🏻‍💻 React, Typescript,<br/> ReScript</Fragment>
+        <Fragment>
+          🧑🏻‍💻 React, Typescript,
+          <br /> ReScript
+        </Fragment>
         <Fragment>💼 Wisebits</Fragment>
       </VerticalList>
     </Typography>
@@ -308,41 +269,41 @@ const CardSlide: React.FC<{ cardImg: string }> = ({
 
 const QuestionsSlide = (
   <TitleSlide>
-    <Absolute top="10%" left="15%" style={{ zIndex: 0 }}>
+    <Absolute top='10%' left='15%' style={{ zIndex: 0 }}>
       <SubtitleBack>
         <VerticalList>
           <li>
             <A
-              href="https://github.com/ts-type-makeup/superstruct-ts-transformer"
-              target="_blank"
-              rel="noopener noreferrer"
+              href='https://github.com/ts-type-makeup/superstruct-ts-transformer'
+              target='_blank'
+              rel='noopener noreferrer'
             >
               💚 superstruct-ts-transformer
             </A>
           </li>
           <li>
             <A
-              href="https://github.com/ts-type-makeup/ts-type-visitor"
-              target="_blank"
-              rel="noopener noreferrer"
+              href='https://github.com/ts-type-makeup/ts-type-visitor'
+              target='_blank'
+              rel='noopener noreferrer'
             >
               💚 ts-type-visitor
             </A>
           </li>
           <li>
             <A
-              href="https://twitter.com/SaitoNakamura"
-              target="_blank"
-              rel="noopener noreferrer"
+              href='https://twitter.com/SaitoNakamura'
+              target='_blank'
+              rel='noopener noreferrer'
             >
               🐦 @saitonakamura
             </A>
           </li>
           <li>
             <A
-              href="https://bending-reality.netlify.app"
-              target="_blank"
-              rel="noopener noreferrer"
+              href='https://bending-reality.netlify.app'
+              target='_blank'
+              rel='noopener noreferrer'
             >
               🖥 bit.ly/bending-reality
             </A>
@@ -370,13 +331,13 @@ const theme: Partial<DefaultTheme> = {
 
 const GlobalStyle = createGlobalStyle`
 html {
-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *, *::after, *::before {
-margin: 0;
-padding: 0;
-box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
 li {
@@ -386,31 +347,31 @@ li {
 
 const Deck = () => (
   <>
-    <Presentation name="Bending reality with type-directed emit" theme={theme}>
-      <TitleSlide title="Bending reality" subtitle="with type-directed emit" />
+    <Presentation name='Bending reality with type-directed emit' theme={theme}>
+      <TitleSlide title='Bending reality' subtitle='with type-directed emit' />
       {AboutMeSlide}
       <BaseSlideStyled>
         <Title>JSON Validation</Title>
       </BaseSlideStyled>
       <BaseSlideStyled background={JasonStathamImg}>
-        <Typography fontSize="290px">
+        <Typography fontSize='290px'>
           <Fragment>
-            <Absolute top="10%" left="15%">
+            <Absolute top='10%' left='15%'>
               {'{'}
             </Absolute>
-            <Absolute top="10%" right="25%">
+            <Absolute top='10%' right='25%'>
               {'}'}
             </Absolute>
           </Fragment>
         </Typography>
       </BaseSlideStyled>
       <BaseSlideStyled background={VinDieselImg}>
-        <Typography fontSize="290px">
+        <Typography fontSize='290px'>
           <Fragment>
-            <Absolute top="10%" left="15%">
+            <Absolute top='10%' left='15%'>
               {'{'}
             </Absolute>
-            <Absolute top="10%" right="25%">
+            <Absolute top='10%' right='25%'>
               {'}'}
             </Absolute>
           </Fragment>
@@ -437,8 +398,8 @@ const Deck = () => (
       <BaseSlideStyled>
         <VerticalList>
           <Title>JS Libraries</Title>
-          <Typography fontSize="30px">
-            <VerticalList gapSize="10px">
+          <Typography fontSize='30px'>
+            <VerticalList gapSize='10px'>
               <Fragment>💚 Simple!</Fragment>
               <Fragment>💔 Need to keep types and schemes in sync</Fragment>
             </VerticalList>
@@ -448,13 +409,11 @@ const Deck = () => (
       {JsLibrariesSlide}
       <BaseSlideStyled>
         <VerticalList>
-          <Title>io-ts</Title>
-          <Typography fontSize="30px">
-            <VerticalList gapSize="10px">
+          <Title>io-ts/runtypes/typed-contracts</Title>
+          <Typography fontSize='30px'>
+            <VerticalList gapSize='10px'>
               <Fragment>💚 Everything in sync with type inference</Fragment>
-              <Fragment>💚 FP principles</Fragment>
               <Fragment>💔 Hard to integrate with existing types</Fragment>
-              <Fragment>💔 Hard to work with non-FP code</Fragment>
             </VerticalList>
           </Typography>
         </VerticalList>
@@ -463,8 +422,8 @@ const Deck = () => (
       <BaseSlideStyled>
         <VerticalList>
           <Title>class-validator</Title>
-          <Typography fontSize="30px">
-            <VerticalList gapSize="10px">
+          <Typography fontSize='30px'>
+            <VerticalList gapSize='10px'>
               <Fragment>💚 Sync with classes</Fragment>
               <Fragment>💔 Everything need to be class</Fragment>
               <Fragment>💔 Experimental decorators</Fragment>
@@ -474,31 +433,21 @@ const Deck = () => (
         </VerticalList>
       </BaseSlideStyled>
       {ClassValidatorCodeSlide}
-      <TitleSlide title="Type-directed emit" subtitle="with custom transformers" />
+      <TitleSlide
+        title='Type-directed emit'
+        subtitle='with custom transformers'
+      />
       {TypeDirectedEmitCodeSlides}
       <CardSlide cardImg={JokerImg}>
-        <Absolute top="38%" right="11%">
-          <TitleBack fontSize="100px">Reading AST</TitleBack>
+        <Absolute top='38%' right='11%'>
+          <TitleBack fontSize='100px'>Reading AST</TitleBack>
         </Absolute>
       </CardSlide>
-      <BaseSlideStyled>
-        <Absolute
-          top="0%"
-          left="0%"
-          right="100%"
-          bottom="100%"
-          style={{ width: '100%', height: '100%', padding: '10px' }}
-        >
-          <iframe
-            style={{ width: '100%', height: '100%' }}
-            src="https://ts-ast-viewer.com/#code/JYWwDg9gTgLgBAbzgNwIYBtgBNUwKZwC+cAZlBCAFBxwDkAzgK5h5T0xSMDGAtDPXyioAdvRLQQrWpUowAnizgAVVPQDWcALyJqcGMBjo8ALjjsowYQHNKhGXgAekWHC4RR8CACMAVlpQY2Lh4ADwq6gB8ugAUAFIAygDyAHIAdGCobHjRtEgARPqGeHmmeQBCjHJweFZW9HlEtACUTUA"
-          />
-        </Absolute>
-      </BaseSlideStyled>
+      <IframeFullSlide url='https://ts-ast-viewer.com/#code/JYWwDg9gTgLgBAbzgNwIYBtgBNUwKZwC+cAZlBCAFBxwDkAzgK5h5T0xSMDGMAtDPX5RUAO3oloIVrUqUYATxZwAKqnoBrOAF5E1ODGAx0eAFxx2UYCIDmlQrLwAPSLDhcIY+BABGAK20oGNi4eAA8qhoAfHoAFABSAMoA8gByAHRgqGx4MbRIAEQGRnj5ZvkAQozycHjW1vT5RLQAlM1AA' />
       {AstTalksSlide}
       <CardSlide cardImg={RyuijiImg}>
-        <Absolute top="38%" right="8%">
-          <TitleBack fontSize="100px">Reading types</TitleBack>
+        <Absolute top='38%' right='8%'>
+          <TitleBack fontSize='100px'>Reading types</TitleBack>
         </Absolute>
       </CardSlide>
       {ReadingTypesSlides}
@@ -508,8 +457,8 @@ const Deck = () => (
       {/*  </Absolute>*/}
       {/*</CardSlide>*/}
       <CardSlide cardImg={YusukeImg}>
-        <Absolute top="38%" right="3%">
-          <TitleBack fontSize="90px">Emitting validator</TitleBack>
+        <Absolute top='38%' right='3%'>
+          <TitleBack fontSize='90px'>Emitting validator</TitleBack>
         </Absolute>
       </CardSlide>
       {EmittingValidatorSlides}
@@ -519,28 +468,28 @@ const Deck = () => (
       {/*  </Absolute>*/}
       {/*</CardSlide>*/}
       <CardSlide cardImg={HaruImg}>
-        <Absolute top="25%" right="8%">
-          <TitleBack fontSize="80px" style={{ width: '500px' }}>
+        <Absolute top='25%' right='8%'>
+          <TitleBack fontSize='80px' style={{ width: '500px' }}>
             💔 Wrapping validator problem
           </TitleBack>
         </Absolute>
       </CardSlide>
       {WrappingValidatorCodeSlides}
       <CardSlide cardImg={TwinsImg}>
-        <Absolute top="38%" right="8%">
-          <TitleBack fontSize="80px">💔 Hard to debug</TitleBack>
+        <Absolute top='38%' right='8%'>
+          <TitleBack fontSize='80px'>💔 Hard to debug</TitleBack>
         </Absolute>
       </CardSlide>
       <CardSlide cardImg={FutabaImg}>
-        <Absolute top="38%" right="8%">
-          <TitleBack fontSize="80px">💔 No .babelrc</TitleBack>
+        <Absolute top='38%' right='8%'>
+          <TitleBack fontSize='80px'>💔 No .babelrc</TitleBack>
         </Absolute>
       </CardSlide>
       <BaseSlideStyled>
         <VerticalList>
           <Title>Other applications</Title>
-          <Typography fontSize="30px">
-            <VerticalList gapSize="10px">
+          <Typography fontSize='30px'>
+            <VerticalList gapSize='10px'>
               <Fragment>💚 prop-types generation</Fragment>
               <Fragment>💚 data stubs generation</Fragment>
               <Fragment>💚 property-based testing</Fragment>

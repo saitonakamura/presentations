@@ -4,18 +4,125 @@ import React from 'react'
 
 export const ReadingTypesSlides = [
   <CodeSurferSlide
-    key="reading_types_1"
+    key='reading_types_1'
     steps={[
       {
-        code: `const type = checker.
-  getTypeFromTypeNode(node.typeArguments[0]);`,
-        lang: 'ts'
-      }
+        code: `import { validate } from 'superstruct-transfomer'
+        
+validate<Task>(json)`,
+        lang: 'ts',
+      },
+      {
+        code: `import { validate } from 'superstruct-transfomer'
+
+validate<Task>(json)
+
+// =================================== //
+
+if (ts.isCallExpression(node)
+) {
+  // Do stuff
+}`,
+        lang: 'ts',
+      },
+      {
+        code: `import { validate } from 'superstruct-transfomer'
+
+validate<Task>(json)
+
+// =================================== //
+
+if (ts.isCallExpression(node)
+  && typeChecker.getSymbolAtLocation(node.expression)
+) {
+  // Do stuff
+}`,
+        lang: 'ts',
+      },
+      {
+        code: `import { validate } from 'superstruct-transfomer'
+
+validate<Task>(json)
+
+// =================================== //
+
+if (ts.isCallExpression(node)
+  && typeChecker.getSymbolAtLocation(node.expression)
+    ?.declarations.some(decl =>
+      (ts.isNamedImport(decl) || ts.isNamespaceImport(decl)) &&
+      decl.parent.parent.parent.moduleSpecifier === 'superstruct-ts-transfomer'
+    )
+) {
+  // Do stuff
+}`,
+        lang: 'ts',
+      },
+      {
+        code: `import { validate } from 'superstruct-transfomer'
+
+validate<Task>(json)
+
+// =================================== //
+
+if (ts.isCallExpression(node)
+  && typeChecker.getSymbolAtLocation(node.expression)
+    ?.declarations.some(decl =>
+      (ts.isNamedImport(decl) || ts.isNamespaceImport(decl)) &&
+      decl.parent.parent.parent.moduleSpecifier === 'superstruct-ts-transfomer'
+    )
+    && node.typeArguments?.length > 0
+) {
+  // Do stuff
+}`,
+        lang: 'ts',
+      },
+      {
+        code: `import { validate } from 'superstruct-transfomer'
+
+validate<Task>(json)
+
+// =================================== //
+
+if (ts.isCallExpression(node)
+  && typeChecker.getSymbolAtLocation(node.expression)
+    ?.declarations.some(decl =>
+      (ts.isNamedImport(decl) || ts.isNamespaceImport(decl)) &&
+      decl.parent.parent.parent.moduleSpecifier === 'superstruct-ts-transfomer'
+    )
+    && node.typeArguments?.length > 0
+    && node.arguments.length > 0
+) {
+  // Do stuff
+}`,
+        lang: 'ts',
+      },
+      {
+        code: `import { validate } from 'superstruct-transfomer'
+
+validate<Task>(json)
+
+// =================================== //
+
+if (ts.isCallExpression(node)
+  && typeChecker.getSymbolAtLocation(node.expression)
+    ?.declarations.some(decl =>
+      (ts.isNamedImport(decl) || ts.isNamespaceImport(decl)) &&
+      decl.parent.parent.parent.moduleSpecifier === 'superstruct-ts-transfomer'
+    )
+    && node.typeArguments?.length > 0
+    && node.arguments.length > 0
+) {
+  // https://github.com/ts-type-makeup/ts-type-visitor
+  const typeModel = typeVisitor(typeChecker, node.typeArguments[0])
+  // Do stuff
+}`,
+        lang: 'ts',
+      },
     ]}
     theme={vsDark}
   />,
   <CodeSurferSlide
-    key="reading_types_2"
+    key='reading_types_2'
     steps={[
       {
         lang: 'ts',
@@ -40,13 +147,13 @@ export const ReadingTypesSlides = [
   }
   
   // ...
-}`
-      }
+}`,
+      },
     ]}
     theme={vsDark}
   />,
   <CodeSurferSlide
-    key="reading_types_3"
+    key='reading_types_3'
     steps={[
       {
         code: `export interface TypeModelAny {
@@ -68,10 +175,9 @@ export type TypeModel =
   | TypeModelUnknown
   | TypeModelString
   | // ...`,
-        lang: 'ts'
-      }
+        lang: 'ts',
+      },
     ]}
     theme={vsDark}
-  />
-
+  />,
 ]
