@@ -9,6 +9,7 @@ import { SlideProps } from '@saitonakamura/presa'
 import { useSpring } from 'use-spring'
 import { useFragments } from '@saitonakamura/presa'
 import { PlainLayout } from '@saitonakamura/presa'
+import { BaseSlideStyled } from './lib'
 // import { InputStep } from 'code-surfer-types'
 
 type Maybe<T> = T | null | undefined
@@ -107,7 +108,7 @@ export const CodeSurferSlide: React.FC<{
   slide?: React.ComponentType<SlideProps>
   theme?: any
   nonblocking?: boolean
-}> = ({ steps, slide: BaseSlide = Slide, theme, nonblocking, ...rest }) => {
+}> = ({ steps, slide: BaseSlide = BaseSlideStyled, theme, nonblocking, ...rest }) => {
   return (
     <BaseSlide layout={PlainLayout} {...rest}>
       <CodeSurferInner theme={theme} nonblocking={nonblocking} steps={steps} />

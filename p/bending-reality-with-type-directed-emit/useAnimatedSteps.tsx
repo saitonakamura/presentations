@@ -4,10 +4,8 @@ import React, { useMemo } from 'react'
 import { ControlledFragment, Slide } from '@saitonakamura/presa'
 import { PlainLayout } from '@saitonakamura/presa'
 import { SlideProps } from '@saitonakamura/presa'
-import {
-  ALL_FRAGMENTS,
-  NO_FRAGMENTS,
-} from '@saitonakamura/presa'
+import { ALL_FRAGMENTS, NO_FRAGMENTS } from '@saitonakamura/presa'
+import { BaseSlideStyled } from './lib'
 
 const processSteps = <T extends Record<string, {}>>(steps: Steps<T>) => {
   const keys = Object.keys(steps[0])
@@ -51,7 +49,7 @@ type AnimatedStyle<DS extends object> = AnimatedValue<
 type AnimatedStyles<T> = Record<keyof T, AnimatedStyle<{}>>
 
 export const useAnimatedSteps = <T extends Record<string, {}>>(
-  steps: Steps<T>
+  steps: Steps<T>,
 ): ((step: number) => AnimatedStyles<T>) => {
   const processedSteps = useMemo(() => processSteps(steps), [steps])
 
@@ -91,7 +89,7 @@ function AnimatedPart<T extends Record<string, {}>>({
   steps: Steps<T>
   children: (
     steps: AnimatedStyles<T>,
-    step: number
+    step: number,
   ) => React.ReactElement<any, any> | null
 }) {
   if (step === NO_FRAGMENTS) {
@@ -111,13 +109,13 @@ function AnimatedPart<T extends Record<string, {}>>({
 export function AnimatedSlide<T extends Record<string, {}>>({
   children,
   steps,
-  slide: BaseSlide = Slide,
+  slide: BaseSlide = BaseSlideStyled,
   ...rest
 }: {
   steps: Steps<T>
   children: (
     steps: AnimatedStyles<T>,
-    step: number
+    step: number,
   ) => React.ReactElement<any, any> | null
   slide?: React.ComponentType<SlideProps>
 }) {

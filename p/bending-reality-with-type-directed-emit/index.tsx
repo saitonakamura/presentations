@@ -36,7 +36,15 @@ import { EmittingValidatorSlides } from './EmitingValidatorSlides'
 import { TypeDirectedEmitCodeSlides } from './TypeDirectedEmitCodeSlides'
 import { WrappingValidatorCodeSlides } from './WrappingValidatorCodeSlides'
 import { AstTalksSlide } from './AstTalksSlide'
-import { Absolute, BaseSlideStyled } from './lib'
+import {
+  A,
+  Absolute,
+  BaseSlideStyled,
+  OuterA,
+  Typography,
+  typography,
+  TwitterLink,
+} from './lib'
 import { IframeFullSlide } from './IframeFullSlide'
 
 const red = '#C50101'
@@ -76,22 +84,6 @@ const VerticalList = styled.ul<{ gapSize?: string }>`
   > * + * {
     margin-top: ${(p) => p.gapSize ?? '40px'};
   }
-`
-
-type Typography = {
-  fontSize?: string
-  fontWeight?: 'bold' | 400 | 500 | 700
-  fontFamily?: string
-}
-
-const typography = (t: Typography) => css`
-  font-size: ${t.fontSize ?? 'inherit'};
-  font-weight: ${t.fontWeight ?? 'inherit'};
-  font-family: ${t.fontFamily ?? 'inherit'};
-`
-
-const Typography = styled.div<Typography>`
-  ${typography};
 `
 
 const Title = styled.h1<Typography>`
@@ -206,23 +198,6 @@ const CardStyled = styled.img`
   left: 50%;
 `
 
-const A = styled.a<Typography>`
-  ${typography};
-  transition: all 0.15s ease-in-out;
-  display: inline-block;
-
-  &:link,
-  &:visited {
-    color: ${(p) => p.theme.colors.white};
-  }
-
-  &:hover {
-    color: ${(p) => p.theme.colors.red};
-    text-decoration: underline;
-    transform: scale(1.05);
-  }
-`
-
 const AnimatedCard = animated(CardStyled)
 
 const CardSlide: React.FC<{ cardImg: string }> = ({
@@ -273,40 +248,22 @@ const QuestionsSlide = (
       <SubtitleBack>
         <VerticalList>
           <li>
-            <A
-              href='https://github.com/ts-type-makeup/superstruct-ts-transformer'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
+            <OuterA href='https://github.com/ts-type-makeup/superstruct-ts-transformer'>
               💚 superstruct-ts-transformer
-            </A>
+            </OuterA>
           </li>
           <li>
-            <A
-              href='https://github.com/ts-type-makeup/ts-type-visitor'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
+            <OuterA href='https://github.com/ts-type-makeup/ts-type-visitor'>
               💚 ts-type-visitor
-            </A>
+            </OuterA>
           </li>
           <li>
-            <A
-              href='https://twitter.com/SaitoNakamura'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              🐦 @saitonakamura
-            </A>
+            <TwitterLink />
           </li>
           <li>
-            <A
-              href='https://bending-reality.netlify.app'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
+            <OuterA href='https://bending-reality.netlify.app'>
               🖥 bit.ly/bending-reality
-            </A>
+            </OuterA>
           </li>
         </VerticalList>
       </SubtitleBack>
