@@ -262,8 +262,8 @@ const QuestionsSlide = (
             <TwitterLink />
           </li>
           <li>
-            <OuterA href='https://bending-reality.netlify.app'>
-              🖥 bit.ly/bending-reality
+            <OuterA href='https://bending-holyjs.netlify.app'>
+              🖥 bit.ly/bending-reality-holyjs
             </OuterA>
           </li>
         </VerticalList>

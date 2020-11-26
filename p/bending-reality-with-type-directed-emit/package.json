@@ -23,8 +23,8 @@
   },
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html --out-dir bending-dist",
-    "deploy:prod": "netlify deploy --dir=bending-dist --prod",
+    "build": "parcel build index.html --out-dir prod-dist",
+    "deploy:prod": "netlify deploy --dir=prod-dist --prod",
     "build:deploy:prod": "yarn build && yarn deploy:prod"
   }
 }
