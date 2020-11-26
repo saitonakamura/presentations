@@ -46,6 +46,7 @@ import {
   TwitterLink,
 } from './lib'
 import { IframeFullSlide } from './IframeFullSlide'
+import { CustomValidatorSlides } from './CustomValidatorSlides'
 
 const red = '#C50101'
 const black = '#000000'
@@ -419,11 +420,12 @@ const Deck = () => (
         </Absolute>
       </CardSlide>
       {EmittingValidatorSlides}
-      {/*<CardSlide cardImg={AnnImg}>*/}
-      {/*  <Absolute top="38%" right="3%">*/}
-      {/*    <TitleBack fontSize="90px">Nominal types validation</TitleBack>*/}
-      {/*  </Absolute>*/}
-      {/*</CardSlide>*/}
+      <CardSlide cardImg={AnnImg}>
+        <Absolute top="38%" right="3%">
+          <TitleBack fontSize="90px">Custom validation</TitleBack>
+        </Absolute>
+      </CardSlide>
+      {CustomValidatorSlides}
       <CardSlide cardImg={HaruImg}>
         <Absolute top='25%' right='8%'>
           <TitleBack fontSize='80px' style={{ width: '500px' }}>

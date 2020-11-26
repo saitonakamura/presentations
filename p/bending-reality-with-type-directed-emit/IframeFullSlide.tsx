@@ -2,11 +2,10 @@ import { SlideProps } from '@saitonakamura/presa'
 import React from 'react'
 import { Absolute, BaseSlideStyled } from './lib'
 
-export const IframeFullSlide: React.FC<SlideProps & { url: string }> = ({
-  url,
-  ...rest
-}) => (
-  <BaseSlideStyled {...rest}>
+export const IframeFullSlide: React.FC<
+  SlideProps & { url: string; allow?: string; allowFullScreen?: boolean }
+> = ({ url, allow, allowFullScreen, ...rest }) => (
+  <BaseSlideStyled disableLogo disableSocial {...rest}>
     <Absolute
       top='0%'
       left='0%'
@@ -14,7 +13,12 @@ export const IframeFullSlide: React.FC<SlideProps & { url: string }> = ({
       bottom='100%'
       style={{ width: '100%', height: '100%', padding: '10px' }}
     >
-      <iframe style={{ width: '100%', height: '100%' }} src={url} />
+      <iframe
+        allow={allow}
+        allowFullScreen={allowFullScreen}
+        style={{ width: '100%', height: '100%' }}
+        src={url}
+      />
     </Absolute>
   </BaseSlideStyled>
 )
