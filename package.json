@@ -6,5 +6,18 @@
   "author": "Michael Bashurov <accounts@saitonakamura.me>",
   "license": "MIT",
   "private": true,
-  "workspaces": ["p/*"]
+  "workspaces": [
+    "p/*",
+    "presa/packages/*"
+  ],
+  "devDependencies": {
+    "typescript": "^4.2.3"
+  },
+  "scripts": {
+    "build": "tsc --build"
+  },
+  "resolutions": {
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2"
+  }
 }

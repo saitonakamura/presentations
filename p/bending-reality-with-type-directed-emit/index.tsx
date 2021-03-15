@@ -1,12 +1,8 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Slide, Presentation, Fragment } from '@saitonakamura/presa'
-import styled, {
-  createGlobalStyle,
-  css,
-  DefaultTheme,
-  SlideTheme,
-} from 'styled-components'
+import type { Theme, SlideThemeType } from '@saitonakamura/presa'
+import styled, { createGlobalStyle, css } from 'styled-components'
 import BackImg from './assets/back.png'
 import BackJokerImg from './assets/back-joker.png'
 import AnnImg from './assets/ann.png'
@@ -150,22 +146,22 @@ const TitleSlide = styled(
     children,
     ...rest
   }: { title?: string; subtitle?: React.ReactNode } & SlideProps) => (
-    <BaseSlideStyled background='none' {...rest}>
+    <BaseSlideStyled background="none" {...rest}>
       <BackImgToBlend src={BackJokerImg} />
       {/*<GradientOfBackImgToBlend />*/}
 
-      <Absolute top='52%' right='15%' style={{ zIndex: 1 }}>
+      <Absolute top="52%" right="15%" style={{ zIndex: 1 }}>
         {subtitle && <SubtitleBack>{subtitle}</SubtitleBack>}
       </Absolute>
-      <Typography fontSize='100px'>
+      <Typography fontSize="100px">
         {/*<Absolute top="25%" left="23%">*/}
         {/*  <Title noSize style={{ mixBlendMode: 'overlay', zIndex: -1 }}>*/}
         {/*    {title}*/}
         {/*  </Title>*/}
         {/*</Absolute>*/}
-        <Absolute top='25%' left='13%' style={{ zIndex: 1 }}>
+        <Absolute top="25%" left="13%" style={{ zIndex: 1 }}>
           {title && (
-            <TitleBack fontSize='inherit' style={{ whiteSpace: 'nowrap' }}>
+            <TitleBack fontSize="inherit" style={{ whiteSpace: 'nowrap' }}>
               {title}
             </TitleBack>
           )}
@@ -173,13 +169,13 @@ const TitleSlide = styled(
       </Typography>
       {children}
     </BaseSlideStyled>
-  ),
+  )
 )``
 
 const AboutMeSlide = (
   <AboutMeSlideStyled layout={CenteredLayoutHorizontal}>
     <Avatar style={{ marginRight: '30px' }} />
-    <Typography fontSize='35px'>
+    <Typography fontSize="35px">
       <VerticalList>
         <Title>Michael Bashurov</Title>
         <Fragment>
@@ -245,16 +241,16 @@ const CardSlide: React.FC<{ cardImg: string }> = ({
 
 const QuestionsSlide = (
   <TitleSlide>
-    <Absolute top='10%' left='15%' style={{ zIndex: 0 }}>
+    <Absolute top="10%" left="15%" style={{ zIndex: 0 }}>
       <SubtitleBack>
         <VerticalList>
           <li>
-            <OuterA href='https://github.com/ts-type-makeup/superstruct-ts-transformer'>
+            <OuterA href="https://github.com/ts-type-makeup/superstruct-ts-transformer">
               💚 superstruct-ts-transformer
             </OuterA>
           </li>
           <li>
-            <OuterA href='https://github.com/ts-type-makeup/ts-type-visitor'>
+            <OuterA href="https://github.com/ts-type-makeup/ts-type-visitor">
               💚 ts-type-visitor
             </OuterA>
           </li>
@@ -262,7 +258,7 @@ const QuestionsSlide = (
             <TwitterLink />
           </li>
           <li>
-            <OuterA href='https://bending-holyjs.netlify.app'>
+            <OuterA href="https://bending-holyjs.netlify.app">
               🖥 bit.ly/bending-reality-holyjs
             </OuterA>
           </li>
@@ -272,14 +268,16 @@ const QuestionsSlide = (
   </TitleSlide>
 )
 
-const theme: Partial<DefaultTheme> = {
+const theme: Partial<Theme> & {
+  colors: Record<'black' | 'white' | 'red', string>
+} = {
   baseFont: `Raleway, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif`,
   primaryColor: red,
   slide: {
     baseFont: `Raleway, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif`,
     textColor: '#FFFFFF',
     background: `url('${BackImg}') center center / cover no-repeat, linear-gradient(to bottom, #000000, #404040)`,
-  } as SlideTheme,
+  } as SlideThemeType,
   colors: {
     black,
     white,
@@ -305,31 +303,31 @@ li {
 
 const Deck = () => (
   <>
-    <Presentation name='Bending reality with type-directed emit' theme={theme}>
-      <TitleSlide title='Bending reality' subtitle='with type-directed emit' />
+    <Presentation name="Bending reality with type-directed emit" theme={theme}>
+      <TitleSlide title="Bending reality" subtitle="with type-directed emit" />
       {AboutMeSlide}
       <BaseSlideStyled>
         <Title>JSON Validation</Title>
       </BaseSlideStyled>
       <BaseSlideStyled background={JasonStathamImg}>
-        <Typography fontSize='290px'>
+        <Typography fontSize="290px">
           <Fragment>
-            <Absolute top='10%' left='15%'>
+            <Absolute top="10%" left="15%">
               {'{'}
             </Absolute>
-            <Absolute top='10%' right='25%'>
+            <Absolute top="10%" right="25%">
               {'}'}
             </Absolute>
           </Fragment>
         </Typography>
       </BaseSlideStyled>
       <BaseSlideStyled background={VinDieselImg}>
-        <Typography fontSize='290px'>
+        <Typography fontSize="290px">
           <Fragment>
-            <Absolute top='10%' left='15%'>
+            <Absolute top="10%" left="15%">
               {'{'}
             </Absolute>
-            <Absolute top='10%' right='25%'>
+            <Absolute top="10%" right="25%">
               {'}'}
             </Absolute>
           </Fragment>
@@ -356,8 +354,8 @@ const Deck = () => (
       <BaseSlideStyled>
         <VerticalList>
           <Title>JS Libraries</Title>
-          <Typography fontSize='30px'>
-            <VerticalList gapSize='10px'>
+          <Typography fontSize="30px">
+            <VerticalList gapSize="10px">
               <Fragment>💚 Simple!</Fragment>
               <Fragment>💔 Need to keep types and schemes in sync</Fragment>
             </VerticalList>
@@ -368,8 +366,8 @@ const Deck = () => (
       <BaseSlideStyled>
         <VerticalList>
           <Title>io-ts/runtypes/typed-contracts</Title>
-          <Typography fontSize='30px'>
-            <VerticalList gapSize='10px'>
+          <Typography fontSize="30px">
+            <VerticalList gapSize="10px">
               <Fragment>💚 Everything in sync with type inference</Fragment>
               <Fragment>💔 Hard to integrate with existing types</Fragment>
             </VerticalList>
@@ -380,8 +378,8 @@ const Deck = () => (
       <BaseSlideStyled>
         <VerticalList>
           <Title>class-validator</Title>
-          <Typography fontSize='30px'>
-            <VerticalList gapSize='10px'>
+          <Typography fontSize="30px">
+            <VerticalList gapSize="10px">
               <Fragment>💚 Sync with classes</Fragment>
               <Fragment>💔 Everything need to be class</Fragment>
               <Fragment>💔 Experimental decorators</Fragment>
@@ -392,20 +390,20 @@ const Deck = () => (
       </BaseSlideStyled>
       {ClassValidatorCodeSlide}
       <TitleSlide
-        title='Type-directed emit'
-        subtitle='with custom transformers'
+        title="Type-directed emit"
+        subtitle="with custom transformers"
       />
       {TypeDirectedEmitCodeSlides}
       <CardSlide cardImg={JokerImg}>
-        <Absolute top='38%' right='11%'>
-          <TitleBack fontSize='100px'>Reading AST</TitleBack>
+        <Absolute top="38%" right="11%">
+          <TitleBack fontSize="100px">Reading AST</TitleBack>
         </Absolute>
       </CardSlide>
-      <IframeFullSlide url='https://ts-ast-viewer.com/#code/JYWwDg9gTgLgBAbzgNwIYBtgBNUwKZwC+cAZlBCAFBxwDkAzgK5h5T0xSMDGMAtDPX5RUAO3oloIVrUqUYATxZwAKqnoBrOAF5E1ODGAx0eAFxx2UYCIDmlQrLwAPSLDhcIY+BABGAK20oGNi4eAA8qhoAfHoAFABSAMoA8gByAHRgqGx4MbRIAEQGRnj5ZvkAQozycHjW1vT5RLQAlM1AA' />
+      <IframeFullSlide url="https://ts-ast-viewer.com/#code/JYWwDg9gTgLgBAbzgNwIYBtgBNUwKZwC+cAZlBCAFBxwDkAzgK5h5T0xSMDGMAtDPX5RUAO3oloIVrUqUYATxZwAKqnoBrOAF5E1ODGAx0eAFxx2UYCIDmlQrLwAPSLDhcIY+BABGAK20oGNi4eAA8qhoAfHoAFABSAMoA8gByAHRgqGx4MbRIAEQGRnj5ZvkAQozycHjW1vT5RLQAlM1AA" />
       {AstTalksSlide}
       <CardSlide cardImg={RyuijiImg}>
-        <Absolute top='38%' right='8%'>
-          <TitleBack fontSize='100px'>Reading types</TitleBack>
+        <Absolute top="38%" right="8%">
+          <TitleBack fontSize="100px">Reading types</TitleBack>
         </Absolute>
       </CardSlide>
       {ReadingTypesSlides}
@@ -415,8 +413,8 @@ const Deck = () => (
       {/*  </Absolute>*/}
       {/*</CardSlide>*/}
       <CardSlide cardImg={YusukeImg}>
-        <Absolute top='38%' right='3%'>
-          <TitleBack fontSize='90px'>Emitting validator</TitleBack>
+        <Absolute top="38%" right="3%">
+          <TitleBack fontSize="90px">Emitting validator</TitleBack>
         </Absolute>
       </CardSlide>
       {EmittingValidatorSlides}
@@ -427,28 +425,28 @@ const Deck = () => (
       </CardSlide>
       {CustomValidatorSlides}
       <CardSlide cardImg={HaruImg}>
-        <Absolute top='25%' right='8%'>
-          <TitleBack fontSize='80px' style={{ width: '500px' }}>
+        <Absolute top="25%" right="8%">
+          <TitleBack fontSize="80px" style={{ width: '500px' }}>
             💔 Wrapping validator problem
           </TitleBack>
         </Absolute>
       </CardSlide>
       {WrappingValidatorCodeSlides}
       <CardSlide cardImg={TwinsImg}>
-        <Absolute top='38%' right='8%'>
-          <TitleBack fontSize='80px'>💔 Hard to debug</TitleBack>
+        <Absolute top="38%" right="8%">
+          <TitleBack fontSize="80px">💔 Hard to debug</TitleBack>
         </Absolute>
       </CardSlide>
       <CardSlide cardImg={FutabaImg}>
-        <Absolute top='38%' right='8%'>
-          <TitleBack fontSize='80px'>💔 No .babelrc</TitleBack>
+        <Absolute top="38%" right="8%">
+          <TitleBack fontSize="80px">💔 No .babelrc</TitleBack>
         </Absolute>
       </CardSlide>
       <BaseSlideStyled>
         <VerticalList>
           <Title>Other applications</Title>
-          <Typography fontSize='30px'>
-            <VerticalList gapSize='10px'>
+          <Typography fontSize="30px">
+            <VerticalList gapSize="10px">
               <Fragment>💚 prop-types generation</Fragment>
               <Fragment>💚 data stubs generation</Fragment>
               <Fragment>💚 property-based testing</Fragment>

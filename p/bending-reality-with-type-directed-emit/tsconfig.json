@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "exclude": ["node_modules", "lib", "dist"],
+  "include": ["./**/*"],
+  "compilerOptions": {
+    "outDir": "lib",
+    "skipLibCheck": true,
+    "jsx": "react-jsxdev",
+    // "incremental": false
+  },
+  "references": [{ "path": "../../presa/packages/presa" }]
+}

@@ -18,7 +18,9 @@ const processSteps = <T extends Record<string, {}>>(steps: Steps<T>) => {
     keys.forEach((key: keyof T) => {
       if (states.has(key)) {
         const state = states.get(key)
+        // @ts-ignore
         const newState = { ...state, ...step[key] }
+        // @ts-ignore
         states.set(key, newState)
         // @ts-ignore
         newStep[key] = newState
