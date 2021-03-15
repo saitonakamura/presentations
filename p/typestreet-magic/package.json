@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "name": "typestreet-magic",
+  "version": "1.0.0",
+  "devDependencies": {
+    "parcel": "^1.12.4"
+  },
+  "dependencies": {
+    "@saitonakamura/presa": "2.0.0-beta-6",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "scripts": {
+    "start": "parcel index.html"
+  }
+}
