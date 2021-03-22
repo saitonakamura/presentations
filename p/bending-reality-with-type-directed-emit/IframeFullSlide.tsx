@@ -1,6 +1,6 @@
 import { SlideProps } from '@saitonakamura/presa'
 import React from 'react'
-import { Absolute, BaseSlideStyled } from './lib'
+import { Absolute, BaseSlideStyled } from 'base-lib'
 
 export const IframeFullSlide: React.FC<
   SlideProps & { url: string; allow?: string; allowFullScreen?: boolean }

@@ -6,7 +6,9 @@
     "parcel": "^1.12.4"
   },
   "dependencies": {
-    "@saitonakamura/presa": "2.0.0-beta-6",
+    "@saitonakamura/presa": "2.0.0-beta-7",
+    "@saitonakamura/presa-animated-steps": "1.0.0",
+    "base-lib": "1.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },

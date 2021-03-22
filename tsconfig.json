@@ -4,6 +4,8 @@
     { "path": "./presa/packages/presa" },
     { "path": "./presa/packages/demo" },
     { "path": "./presa/packages/blocks" },
-    { "path": "./p/bending-reality-with-type-directed-emit" }
+    { "path": "./p/bending-reality-with-type-directed-emit" },
+    { "path": "./p/animated-steps" },
+    { "path": "./p/base-lib" }
   ]
 }

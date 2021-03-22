@@ -17,7 +17,7 @@ import AvatarImg from './assets/avatar.jpg'
 import JasonStathamImg from './assets/jason-statham.jpg'
 import VinDieselImg from './assets/vin-diesel.jpg'
 import JohnnySinsImg from './assets/johnny-sins.jpg'
-import { AnimatedSlide } from './useAnimatedSteps'
+import { AnimatedSlide } from '@saitonakamura/presa-animated-steps'
 import { animated } from 'react-spring'
 import { CenteredLayout } from '@saitonakamura/presa'
 import { JsonManualValidationSlide } from './jsonManualValidation'
@@ -40,13 +40,11 @@ import {
   Typography,
   typography,
   TwitterLink,
-} from './lib'
+} from 'base-lib'
+import { baseTheme } from 'base-lib/lib/src/theme'
 import { IframeFullSlide } from './IframeFullSlide'
 import { CustomValidatorSlides } from './CustomValidatorSlides'
-
-const red = '#C50101'
-const black = '#000000'
-const white = '#ffffff'
+import produce from 'immer'
 
 const Avatar = styled.img.attrs({
   src: AvatarImg,
@@ -268,23 +266,6 @@ const QuestionsSlide = (
   </TitleSlide>
 )
 
-const theme: Partial<Theme> & {
-  colors: Record<'black' | 'white' | 'red', string>
-} = {
-  baseFont: `Raleway, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif`,
-  primaryColor: red,
-  slide: {
-    baseFont: `Raleway, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif`,
-    textColor: '#FFFFFF',
-    background: `url('${BackImg}') center center / cover no-repeat, linear-gradient(to bottom, #000000, #404040)`,
-  } as SlideThemeType,
-  colors: {
-    black,
-    white,
-    red,
-  },
-}
-
 const GlobalStyle = createGlobalStyle`
 html {
   box-sizing: border-box;
@@ -300,6 +281,10 @@ li {
   list-style: none;
 }
 `
+
+const theme = produce(baseTheme, (t) => {
+  t.slide!.background = `url('${BackImg}') center center / cover no-repeat, linear-gradient(to bottom, #000000, #404040)`
+})
 
 const Deck = () => (
   <>

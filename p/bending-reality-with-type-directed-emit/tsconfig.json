@@ -5,8 +5,12 @@
   "compilerOptions": {
     "outDir": "lib",
     "skipLibCheck": true,
-    "jsx": "react-jsxdev",
+    "jsx": "react-jsxdev"
     // "incremental": false
   },
-  "references": [{ "path": "../../presa/packages/presa" }]
+  "references": [
+    { "path": "../../presa/packages/presa" },
+    { "path": "../animated-steps" },
+    { "path": "../base-lib" }
+  ]
 }

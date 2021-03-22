@@ -1,4 +1,3 @@
-import React from 'react'
 import { Slide, SlideProps } from '@saitonakamura/presa'
 import styled, { css } from 'styled-components'
 import HolyJsImg from './assets/holyjs.svg'
@@ -142,3 +141,4 @@ export const BaseSlideStyled = ({
     {children}
   </Slide>
 )
+

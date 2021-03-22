@@ -1,0 +1,13 @@
+{
+  "name": "base-lib",
+  "version": "1.0.0",
+  "main": "lib/src/base-lib.js",
+  "types": "lib/src/base-lib.d.ts",
+  "license": "MIT",
+  "dependencies": {
+    "@saitonakamura/presa": "2.0.0-beta-7"
+  },
+  "scripts": {
+    "build": "cp -r src/assets lib/src"
+  }
+}

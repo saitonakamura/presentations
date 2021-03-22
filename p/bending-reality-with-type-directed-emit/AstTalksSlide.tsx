@@ -1,6 +1,6 @@
-import React from 'react'
 import { animated } from 'react-spring'
-import { AnimatedSlide } from './useAnimatedSteps'
+import { AnimatedSlide } from '@saitonakamura/presa-animated-steps'
+import { BaseSlideStyled } from 'base-lib'
 
 export const AstTalksSlide = (
   <AnimatedSlide<{
@@ -8,6 +8,7 @@ export const AstTalksSlide = (
     card2: { left: string; top: string; opacity: number; transform: string }
     card3: { left: string; top: string; opacity: number; transform: string }
   }>
+    slide={BaseSlideStyled}
     steps={[
       {
         card1: {
@@ -71,20 +72,20 @@ export const AstTalksSlide = (
       <>
         <animated.iframe
           style={{ ...styles.card1, position: 'absolute' }}
-          width='560'
-          height='315'
-          src='https://www.youtube-nocookie.com/embed/ILSpvViUlPU'
+          width="560"
+          height="315"
+          src="https://www.youtube-nocookie.com/embed/ILSpvViUlPU"
           frameBorder={0}
-          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
         <animated.iframe
           style={{ ...styles.card2, position: 'absolute' }}
-          width='560'
-          height='315'
-          src='https://www.youtube-nocookie.com/embed/UeVq_U5obnE'
+          width="560"
+          height="315"
+          src="https://www.youtube-nocookie.com/embed/UeVq_U5obnE"
           frameBorder={0}
-          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
         <animated.iframe
@@ -93,9 +94,9 @@ export const AstTalksSlide = (
             position: 'absolute',
             backgroundColor: 'white',
           }}
-          width='560'
-          height='315'
-          src='https://holyjs-moscow.ru/en/2020/msk/talks/2tglbvawgaf9k7goi7pc5n'
+          width="560"
+          height="315"
+          src="https://holyjs-moscow.ru/en/2020/msk/talks/2tglbvawgaf9k7goi7pc5n"
           frameBorder={0}
           allowFullScreen
         />

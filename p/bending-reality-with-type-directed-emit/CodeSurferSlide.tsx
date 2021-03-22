@@ -9,7 +9,7 @@ import { SlideProps } from '@saitonakamura/presa'
 import { useSpring } from 'use-spring'
 import { useFragments } from '@saitonakamura/presa'
 import { PlainLayout } from '@saitonakamura/presa'
-import { BaseSlideStyled } from './lib'
+import { BaseSlideStyled } from 'base-lib'
 // import { InputStep } from 'code-surfer-types'
 
 type Maybe<T> = T | null | undefined
