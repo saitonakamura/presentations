@@ -28,8 +28,9 @@ const taskEither = getTask()`,
 const Task = new t.Type({
   title: t.string,
   id: t.number,
-  authorId: t.number,
 })
+
+type Task = t.TypeOf<typeof Task>
 
 const getTask = () => {
   const json = get('/task')

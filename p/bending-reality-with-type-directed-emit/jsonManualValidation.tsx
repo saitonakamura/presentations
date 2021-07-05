@@ -86,7 +86,7 @@ try {
     || typeof json.title === 'string'
     || !json.title) throw Error()
   if (!('id' in json)
-    || typeof json.title === 'number'
+    || typeof json.id === 'number'
     || json.id <= 0) throw Error()
 } catch {
   // handle error

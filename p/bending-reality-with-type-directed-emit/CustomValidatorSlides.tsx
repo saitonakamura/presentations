@@ -28,9 +28,9 @@ export const obj = validate<TestType>(
     ]}
     theme={vsDark}
   />,
-  <IframeFullSlide
-    url='https://www.youtube-nocookie.com/embed/m0uRxCCno00?start=1242'
-    allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-    allowFullScreen
-  />,
+  // <IframeFullSlide
+  //   url='https://www.youtube-nocookie.com/embed/m0uRxCCno00?start=1242'
+  //   allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+  //   allowFullScreen
+  // />,
 ]

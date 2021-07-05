@@ -256,8 +256,8 @@ const QuestionsSlide = (
             <TwitterLink />
           </li>
           <li>
-            <OuterA href="https://bending-holyjs.netlify.app">
-              🖥 bit.ly/bending-reality-holyjs
+            <OuterA href="https://bending-jsdayit.netlify.app">
+              🖥 bit.ly/bending-reality-jsdayit
             </OuterA>
           </li>
         </VerticalList>
@@ -283,6 +283,8 @@ li {
 `
 
 const theme = produce(baseTheme, (t) => {
+  t.primaryColor = baseTheme.colors.red
+  t.slide!.textColor = '#f8f8f8'
   t.slide!.background = `url('${BackImg}') center center / cover no-repeat, linear-gradient(to bottom, #000000, #404040)`
 })
 
@@ -319,21 +321,41 @@ const Deck = () => (
         </Typography>
       </BaseSlideStyled>
       <BaseSlideStyled background={JohnnySinsImg} />
-      {JsonManualValidationSlide}
+      <BaseSlideStyled layout={CenteredLayoutHorizontal}>
+        <Typography>
+          <Fragment>
+            <Title>Log an error</Title>
+          </Fragment>
+          <Fragment>
+            <Title>Fail fast</Title>
+          </Fragment>
+          <Fragment>
+            <Title>Recover</Title>
+          </Fragment>
+        </Typography>
+      </BaseSlideStyled>
+      {JsonManualValidationSlide}   
       <BaseSlideStyled layout={CenteredLayoutHorizontal}>
         <Typography>
           <Fragment>
             <Title>JS libraries</Title>
           </Fragment>
           <Fragment>
-            <Title>io-ts</Title>
+            <Title>Infer-based</Title>
           </Fragment>
           <Fragment>
-            <Title>class-validator</Title>
+            <Title>Decorator-based</Title>
           </Fragment>
           <Fragment>
             <Title>❓</Title>
           </Fragment>
+        </Typography>
+      </BaseSlideStyled>
+      <BaseSlideStyled>
+        <Typography>
+          <Title>OpenAPI spec (swagger)</Title>
+          <Title>Protobuf</Title>
+          <Title>GraphQL</Title>
         </Typography>
       </BaseSlideStyled>
       <BaseSlideStyled>
@@ -350,7 +372,7 @@ const Deck = () => (
       {JsLibrariesSlide}
       <BaseSlideStyled>
         <VerticalList>
-          <Title>io-ts/runtypes/typed-contracts</Title>
+          <Title>Infer: io-ts/etc.</Title>
           <Typography fontSize="30px">
             <VerticalList gapSize="10px">
               <Fragment>💚 Everything in sync with type inference</Fragment>
@@ -362,7 +384,7 @@ const Deck = () => (
       {IoTsSlide}
       <BaseSlideStyled>
         <VerticalList>
-          <Title>class-validator</Title>
+          <Title>Decorator: class-validator</Title>
           <Typography fontSize="30px">
             <VerticalList gapSize="10px">
               <Fragment>💚 Sync with classes</Fragment>

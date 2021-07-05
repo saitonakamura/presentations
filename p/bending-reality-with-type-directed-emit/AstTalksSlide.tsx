@@ -70,11 +70,20 @@ export const AstTalksSlide = (
   >
     {(styles) => (
       <>
-        <animated.iframe
+        {/* <animated.iframe
           style={{ ...styles.card1, position: 'absolute' }}
           width="560"
           height="315"
           src="https://www.youtube-nocookie.com/embed/ILSpvViUlPU"
+          frameBorder={0}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        /> */}
+        <animated.iframe
+          style={{ ...styles.card1, position: 'absolute' }}
+          width="560"
+          height="315"
+          src="https://www.youtube-nocookie.com/embed/C06MohLG_3s"
           frameBorder={0}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
@@ -89,6 +98,15 @@ export const AstTalksSlide = (
           allowFullScreen
         />
         <animated.iframe
+          style={{ ...styles.card3, position: 'absolute' }}
+          width="560"
+          height="315"
+          src="https://www.youtube-nocookie.com/embed/PqeX2ElQOlQ"
+          frameBorder={0}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+        {/* <animated.iframe
           style={{
             ...styles.card3,
             position: 'absolute',
@@ -99,7 +117,7 @@ export const AstTalksSlide = (
           src="https://holyjs-moscow.ru/en/2020/msk/talks/2tglbvawgaf9k7goi7pc5n"
           frameBorder={0}
           allowFullScreen
-        />
+        /> */}
       </>
     )}
   </AnimatedSlide>

@@ -7,13 +7,13 @@ export const ReadingTypesSlides = [
     key='reading_types_1'
     steps={[
       {
-        code: `import { validate } from 'superstruct-transfomer'
+        code: `import { validate } from 'superstruct-ts-transfomer'
         
 validate<Task>(json)`,
         lang: 'ts',
       },
       {
-        code: `import { validate } from 'superstruct-transfomer'
+        code: `import { validate } from 'superstruct-ts-transfomer'
 
 validate<Task>(json)
 
@@ -26,7 +26,7 @@ if (ts.isCallExpression(node)
         lang: 'ts',
       },
       {
-        code: `import { validate } from 'superstruct-transfomer'
+        code: `import { validate } from 'superstruct-ts-transfomer'
 
 validate<Task>(json)
 
@@ -40,7 +40,7 @@ if (ts.isCallExpression(node)
         lang: 'ts',
       },
       {
-        code: `import { validate } from 'superstruct-transfomer'
+        code: `import { validate } from 'superstruct-ts-transfomer'
 
 validate<Task>(json)
 
@@ -58,7 +58,7 @@ if (ts.isCallExpression(node)
         lang: 'ts',
       },
       {
-        code: `import { validate } from 'superstruct-transfomer'
+        code: `import { validate } from 'superstruct-ts-transfomer'
 
 validate<Task>(json)
 
@@ -77,7 +77,7 @@ if (ts.isCallExpression(node)
         lang: 'ts',
       },
       {
-        code: `import { validate } from 'superstruct-transfomer'
+        code: `import { validate } from 'superstruct-ts-transfomer'
 
 validate<Task>(json)
 
@@ -97,7 +97,7 @@ if (ts.isCallExpression(node)
         lang: 'ts',
       },
       {
-        code: `import { validate } from 'superstruct-transfomer'
+        code: `import { validate } from 'superstruct-ts-transfomer'
 
 validate<Task>(json)
 

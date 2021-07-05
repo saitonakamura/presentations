@@ -1,6 +1,7 @@
 import { Slide, SlideProps } from '@saitonakamura/presa'
 import styled, { css } from 'styled-components'
-import HolyJsImg from './assets/holyjs.svg'
+// import HolyJsImg from './assets/holyjs.svg'
+import JsdayitImg from './assets/jsdayit.svg'
 
 export const Absolute = styled.div<{
   top?: string
@@ -90,8 +91,10 @@ export const OuterA = styled(A).attrs({
 })``
 
 const ConferenceLogo = styled.img.attrs({
-  alt: 'HolyJS Conference logo',
-  src: HolyJsImg,
+  // alt: 'HolyJS Conference logo',
+  // src: HolyJsImg,
+  alt: 'jsday.it conference logo',
+  src: JsdayitImg,
 })`
   height: 50px;
 `
